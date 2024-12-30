@@ -1,8 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
+import { BookList } from './task-1'
 
-const Greeting = () => <h2>First Compo</h2>;
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Greeting />);
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<BookList />)
