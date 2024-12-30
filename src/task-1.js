@@ -3,12 +3,14 @@ const books = [
     author: 'Rebecca Yarros',
     title: 'Onyx Storm',
     img: './images/book-cover.jpg',
+    id: 1,
   },
 
   {
     author: 'James Clear',
     title: 'Atomic Habits',
     img: './images/book-cover-2.webp',
+    id: 2,
   },
 ]
 
@@ -28,9 +30,19 @@ export const BookList = () => {
     <section className="booklist">
       {books.map((book, idx) =>
         idx % 2 === 0 ? (
-          <Book author={book.author} title={book.title} img={book.img} />
+          <Book
+            key={book.id}
+            author={book.author}
+            title={book.title}
+            img={book.img}
+          />
         ) : (
-          <Book author={book.author} title={book.title} img={book.img}>
+          <Book
+            key={book.id}
+            author={book.author}
+            title={book.title}
+            img={book.img}
+          >
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
               numquam necessitatibus accusantium eius quae magni, suscipit rem
