@@ -5,12 +5,7 @@ const Author = () => {
   return <h4>Rebecca Yarros</h4>
 }
 const Image = () => {
-  return (
-    <img
-      src="https://images-na.ssl-images-amazon.com/images/I/9101MLPcFTL._AC_UL600_SR600,400_.jpg"
-      alt="Onyx Storm"
-    />
-  )
+  return <img src="./images/book-cover.jpg" alt="Onyx Storm" />
 }
 
 const Book = () => {
