@@ -2,6 +2,18 @@ const author = 'Rebecca Yarros'
 const title = 'Onyx Storm'
 const img = './images/book-cover.jpg'
 
+const firstBook = {
+  author: 'Rebecca Yarros',
+  title: 'Onyx Storm',
+  img: './images/book-cover.jpg',
+}
+
+const secondBook = {
+  author: 'James Clear',
+  title: 'Atomic Habits',
+  img: './images/book-cover-2.webp',
+}
+
 const Book = (props) => {
   return (
     <article className="book">
@@ -15,10 +27,16 @@ const Book = (props) => {
 export const BookList = () => {
   return (
     <section className="booklist">
-      <Book author={author} title={title} img={img} />
-      <Book author={author} title={title} img={img} />
-      <Book author={author} title={title} img={img} />
-      <Book author={author} title={title} img={img} />
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+      />
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
+      />
     </section>
   )
 }
