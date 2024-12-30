@@ -26,8 +26,10 @@ const Book = ({ img, title, author, children }) => {
 }
 
 const EventExample = () => {
-  const handleFormInput = () => {
-    console.log('HANDLE FORM INPUT')
+  const handleFormInput = (e) => {
+    console.log(`HANDLE FORM INPUT: ${e}`)
+    console.log(`Name: ${e.target.name}`)
+    console.log(`Value: ${e.target.value}`)
   }
   return (
     <section>
