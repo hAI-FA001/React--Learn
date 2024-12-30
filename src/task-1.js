@@ -14,7 +14,7 @@ const books = [
   },
 ]
 
-const Book = ({ book: { img, title, author }, children }) => {
+const Book = ({ img, title, author, children }) => {
   return (
     <article className="book">
       <img src={img} alt={title} />
@@ -30,9 +30,9 @@ export const BookList = () => {
     <section className="booklist">
       {books.map((book, idx) =>
         idx % 2 === 0 ? (
-          <Book key={book.id} book={book} />
+          <Book key={book.id} {...book} />
         ) : (
-          <Book key={book.id} book={book}>
+          <Book key={book.id} {...book}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
               numquam necessitatibus accusantium eius quae magni, suscipit rem
