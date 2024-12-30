@@ -14,8 +14,7 @@ const books = [
   },
 ]
 
-const Book = ({ book, children }) => {
-  const { author, title, img } = book
+const Book = ({ book: { img, title, author }, children }) => {
   return (
     <article className="book">
       <img src={img} alt={title} />
