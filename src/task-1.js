@@ -1,7 +1,3 @@
-const author = 'Rebecca Yarros'
-const title = 'Onyx Storm'
-const img = './images/book-cover.jpg'
-
 const firstBook = {
   author: 'Rebecca Yarros',
   title: 'Onyx Storm',
