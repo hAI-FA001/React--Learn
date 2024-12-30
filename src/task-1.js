@@ -1,14 +1,16 @@
-const firstBook = {
-  author: 'Rebecca Yarros',
-  title: 'Onyx Storm',
-  img: './images/book-cover.jpg',
-}
+const books = [
+  {
+    author: 'Rebecca Yarros',
+    title: 'Onyx Storm',
+    img: './images/book-cover.jpg',
+  },
 
-const secondBook = {
-  author: 'James Clear',
-  title: 'Atomic Habits',
-  img: './images/book-cover-2.webp',
-}
+  {
+    author: 'James Clear',
+    title: 'Atomic Habits',
+    img: './images/book-cover-2.webp',
+  },
+]
 
 const Book = ({ img, title, author, children }) => {
   return (
@@ -24,24 +26,21 @@ const Book = ({ img, title, author, children }) => {
 export const BookList = () => {
   return (
     <section className="booklist">
-      <Book
-        author={firstBook.author}
-        title={firstBook.title}
-        img={firstBook.img}
-      />
-      <Book
-        author={secondBook.author}
-        title={secondBook.title}
-        img={secondBook.img}
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-          numquam necessitatibus accusantium eius quae magni, suscipit rem
-          commodi facilis quidem est quis voluptatum hic tempore, in tenetur
-          blanditiis ducimus asperiores.
-        </p>
-        <button>CLICK</button>
-      </Book>
+      {books.map((book, idx) =>
+        idx % 2 === 0 ? (
+          <Book author={book.author} title={book.title} img={book.img} />
+        ) : (
+          <Book author={book.author} title={book.title} img={book.img}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              numquam necessitatibus accusantium eius quae magni, suscipit rem
+              commodi facilis quidem est quis voluptatum hic tempore, in tenetur
+              blanditiis ducimus asperiores.
+            </p>
+            <button>CLICK</button>
+          </Book>
+        )
+      )}
     </section>
   )
 }
