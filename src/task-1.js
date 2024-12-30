@@ -1,9 +1,11 @@
+const author = 'Rebecca Yarros'
+const title = 'Onyx Storm'
+const img = './images/book-cover.jpg'
+
 const Book = () => {
-  const author = 'Rebecca Yarros'
-  const title = 'Onyx Storm'
   return (
     <article className="book">
-      <img src="./images/book-cover.jpg" alt="Onyx Storm" />
+      <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author.toUpperCase()}</h4>
     </article>
