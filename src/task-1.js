@@ -25,9 +25,29 @@ const Book = ({ img, title, author, children }) => {
   )
 }
 
+const EventExample = () => {
+  const handleFormInput = () => {
+    console.log('HANDLE FORM INPUT')
+  }
+  return (
+    <section>
+      <form>
+        <h2>Form</h2>
+        <input
+          type="text"
+          name="example"
+          onChange={handleFormInput}
+          style={{ margin: '1rem 0' }}
+        />
+      </form>
+    </section>
+  )
+}
+
 export const BookList = () => {
   return (
     <section className="booklist">
+      <EventExample />
       {books.map((book, idx) =>
         idx % 2 === 0 ? (
           <Book key={book.id} {...book} />
@@ -39,7 +59,7 @@ export const BookList = () => {
               commodi facilis quidem est quis voluptatum hic tempore, in tenetur
               blanditiis ducimus asperiores.
             </p>
-            <button>CLICK</button>
+            <button onClick={() => alert('CLICKED BUTTON')}>CLICK</button>
           </Book>
         )
       )}
