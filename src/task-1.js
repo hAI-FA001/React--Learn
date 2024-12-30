@@ -10,12 +10,13 @@ const secondBook = {
   img: './images/book-cover-2.webp',
 }
 
-const Book = ({ img, title, author }) => {
+const Book = ({ img, title, author, children }) => {
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author.toUpperCase()}</h4>
+      {children}
     </article>
   )
 }
@@ -32,7 +33,15 @@ export const BookList = () => {
         author={secondBook.author}
         title={secondBook.title}
         img={secondBook.img}
-      />
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+          numquam necessitatibus accusantium eius quae magni, suscipit rem
+          commodi facilis quidem est quis voluptatum hic tempore, in tenetur
+          blanditiis ducimus asperiores.
+        </p>
+        <button>CLICK</button>
+      </Book>
     </section>
   )
 }
