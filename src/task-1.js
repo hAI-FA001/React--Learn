@@ -10,12 +10,12 @@ const secondBook = {
   img: './images/book-cover-2.webp',
 }
 
-const Book = (props) => {
+const Book = ({ img, title, author }) => {
   return (
     <article className="book">
-      <img src={props.img} alt={props.title} />
-      <h2>{props.title}</h2>
-      <h4>{props.author.toUpperCase()}</h4>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author.toUpperCase()}</h4>
     </article>
   )
 }
