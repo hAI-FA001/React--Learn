@@ -14,12 +14,12 @@ const books = [
   },
 ]
 
-const Book = ({ img, title, author, children }) => {
+const Book = ({ id, img, title, author, onClick, children }) => {
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
-      <button onClick={() => console.log(title)}>Display Title</button>
+      <button onClick={() => onClick(id)}>Display Book</button>
       <h4>{author.toUpperCase()}</h4>
       {children}
     </article>
@@ -27,13 +27,18 @@ const Book = ({ img, title, author, children }) => {
 }
 
 export const BookList = () => {
+  const getBook = (id) => {
+    const book = books.find((b) => b.id === id)
+    console.log(book)
+  }
+
   return (
     <section className="booklist">
       {books.map((book, idx) =>
         idx % 2 === 0 ? (
-          <Book key={book.id} {...book} />
+          <Book key={book.id} {...book} onClick={getBook} />
         ) : (
-          <Book key={book.id} {...book}>
+          <Book key={book.id} {...book} onClick={getBook}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
               numquam necessitatibus accusantium eius quae magni, suscipit rem
