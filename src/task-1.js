@@ -19,46 +19,16 @@ const Book = ({ img, title, author, children }) => {
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
+      <button onClick={() => console.log(title)}>Display Title</button>
       <h4>{author.toUpperCase()}</h4>
       {children}
     </article>
   )
 }
 
-const EventExample = () => {
-  const handleFormInput = (e) => {
-    console.log(`HANDLE FORM INPUT: ${e}`)
-    console.log(`Name: ${e.target.name}`)
-    console.log(`Value: ${e.target.value}`)
-  }
-  return (
-    <section>
-      <form>
-        <h2>Form</h2>
-        <input
-          type="text"
-          name="example"
-          onChange={handleFormInput}
-          style={{ margin: '1rem 0' }}
-        />
-        <button
-          type="submit"
-          onClick={(e) => {
-            e.preventDefault()
-            console.log(`Form Submission: ${e}`)
-          }}
-        >
-          Submit
-        </button>
-      </form>
-    </section>
-  )
-}
-
 export const BookList = () => {
   return (
     <section className="booklist">
-      <EventExample />
       {books.map((book, idx) =>
         idx % 2 === 0 ? (
           <Book key={book.id} {...book} />
