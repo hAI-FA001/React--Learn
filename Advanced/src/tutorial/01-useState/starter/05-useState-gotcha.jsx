@@ -14,10 +14,20 @@ const UseStateGotcha = () => {
           // setCount(count + 1)
           // console.log(count)
 
-          setCount((prevCount) => {
-            const newState = prevCount + 1
-            return newState
-          })
+          // setCount((prevCount) => {
+          //   const newState = prevCount + 1
+          //   return newState
+          // })
+
+          // setTimeout(() => {
+          //   console.log('Clicked button')
+          //   setCount(count + 1)
+          // }, 3000)
+
+          setTimeout(() => {
+            console.log('Clicked button')
+            setCount((curCount) => curCount + 1)
+          }, 3000)
         }}
       >
         Increment
