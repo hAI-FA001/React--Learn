@@ -27,7 +27,8 @@ const UseStateObject = () => {
           // setAge(28)
           // setHobby('Scream At The Computer')
 
-          setPerson({ name: 'John', age: 28, hobby: 'Scream At The Computer' })
+          // setPerson({ name: 'John', age: 28, hobby: 'Scream At The Computer' })
+          setPerson({ ...person, name: 'Susan' })
         }}
       >
         Change Person
