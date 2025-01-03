@@ -18,7 +18,7 @@ const UseStateBasics = () => {
         onClick={(e) => {
           setCount(count + 1)
           // setCount(count + count.toString()) // turns into different dtype
-          console.log(count)
+          console.log(count) // will show old value -> not synchronous behavior
         }}
       >
         Increment
