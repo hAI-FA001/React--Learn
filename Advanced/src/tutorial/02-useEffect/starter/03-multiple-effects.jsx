@@ -6,11 +6,11 @@ const MultipleEffects = () => {
 
   useEffect(() => {
     console.log('hello from first useEffect')
-  }, [])
+  }, [value])
 
   useEffect(() => {
     console.log('hello from second useEffect')
-  }, [])
+  }, [secondValue])
 
   return (
     <div>
