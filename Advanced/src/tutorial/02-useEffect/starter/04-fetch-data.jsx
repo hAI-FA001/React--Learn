@@ -16,12 +16,17 @@ const FetchData = () => {
   return (
     <>
       <h2>fetch data example</h2>
-      {users.map((u) => (
-        <div key={u.id}>
-          <p>{u.login}</p>
-          <img src={u.avatar_url} alt="" />
-        </div>
-      ))}
+      <ul className="users">
+        {users.map((u) => (
+          <li key={u.id}>
+            <img src={u.avatar_url} alt={u.login} />
+            <div>
+              <h5>{u.login}</h5>
+              <a href={u.html_url}>View Profile</a>
+            </div>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }
