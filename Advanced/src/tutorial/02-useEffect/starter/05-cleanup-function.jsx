@@ -2,16 +2,12 @@ import { useEffect, useState } from 'react'
 
 const SecondComponent = () => {
   useEffect(() => {
-    console.log('useEffect invoked')
-
-    const intvID = setInterval(() => {
-      console.log('Interval callback')
-    }, 1000)
-
-    return () => {
-      clearInterval(intvID)
-      console.log('Inside cleanup function')
+    const scrollListener = () => {
+      console.log('Scroll event')
     }
+    window.addEventListener('scroll', scrollListener)
+
+    return () => window.removeEventListener('scroll', scrollListener)
   }, [])
 
   return <p>Second Component Toggled</p>
