@@ -19,6 +19,17 @@ const ShortCircuitExamples = () => {
       )}
 
       {user && <SomeCompo {...user} />}
+
+      <br />
+      <br />
+      <h2 style={{ margin: '1rem 0' }}>Ternary</h2>
+      <button type="button" className="btn">
+        {isEditing ? 'Edit' : 'Add'}
+      </button>
+
+      <br />
+      <br />
+      {user ? <h4>Hello, {user.name}</h4> : <h4>You Need To Log In</h4>}
     </>
   )
 }
