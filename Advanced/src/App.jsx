@@ -1,4 +1,4 @@
-import Navbar from './tutorial/04-project-structure/starter/Navbar/navbar'
+import Navbar from './tutorial/04-project-structure/starter/Navbar'
 
 function App() {
   return (
