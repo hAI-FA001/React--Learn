@@ -33,6 +33,15 @@ const UserChallenge = () => {
         <button type="submit" className="btn btn-block">
           submit
         </button>
+        <button
+          type="button"
+          className="btn btn-block"
+          onClick={(e) => {
+            setPeople(people.filter((p) => p.name != name))
+          }}
+        >
+          delete
+        </button>
       </form>
       {people.map((p) => (
         <div key={p.id}>{p.name}</div>
