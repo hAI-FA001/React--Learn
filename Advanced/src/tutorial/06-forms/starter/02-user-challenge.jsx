@@ -11,7 +11,10 @@ const UserChallenge = () => {
         className="form"
         onSubmit={(e) => {
           e.preventDefault()
-          setPeople(people.concat([{ id: people.length + 1, name: name }]))
+          if (!name) return
+          const fakeID = Date.now()
+          setPeople(people.concat([{ id: fakeID, name: name }]))
+          setName('')
         }}
       >
         <h4>Add User</h4>
@@ -33,18 +36,20 @@ const UserChallenge = () => {
         <button type="submit" className="btn btn-block">
           submit
         </button>
-        <button
-          type="button"
-          className="btn btn-block"
-          onClick={(e) => {
-            setPeople(people.filter((p) => p.name != name))
-          }}
-        >
-          delete
-        </button>
       </form>
       {people.map((p) => (
-        <div key={p.id}>{p.name}</div>
+        <div key={p.id}>
+          <h4>{p.name}</h4>
+          <button
+            type="button"
+            className="btn"
+            onClick={(e) => {
+              setPeople(people.filter((p2) => p2.id != p.id))
+            }}
+          >
+            delete
+          </button>
+        </div>
       ))}
     </div>
   )
