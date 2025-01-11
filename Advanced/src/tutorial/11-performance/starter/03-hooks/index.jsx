@@ -1,10 +1,18 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { data } from '../../../../data'
 import List from './List'
 
 const LowerState = () => {
   const [people, setPeople] = useState(data)
   const [count, setCount] = useState(0)
+
+  const removePerson = useCallback(
+    (id) => {
+      console.log(people)
+      setPeople(people.filter((p) => p.id !== id))
+    },
+    [people]
+  ) // pass people or it keeps using original array
 
   return (
     <section>
@@ -15,7 +23,7 @@ const LowerState = () => {
       >
         count {count}
       </button>
-      <List people={people} />
+      <List people={people} removePerson={removePerson} />
     </section>
   )
 }
