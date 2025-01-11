@@ -13,6 +13,10 @@ const UseRefBasics = () => {
   })
 
   useEffect(() => {
+    refContainer.current.focus()
+  })
+
+  useEffect(() => {
     console.log(isMounted)
 
     if (!isMounted.current) {
