@@ -1,6 +1,7 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { data } from '../../../../data'
 import List from './List'
+import { slowFunction } from './slowFunction'
 
 const LowerState = () => {
   const [people, setPeople] = useState(data)
@@ -13,6 +14,9 @@ const LowerState = () => {
     },
     [people]
   ) // pass people or it keeps using original array
+
+  const val = useMemo(slowFunction, [])
+  console.log(val)
 
   return (
     <section>
