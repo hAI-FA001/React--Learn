@@ -1,21 +1,30 @@
 import React from 'react'
 import { data } from '../../../data'
+import { useReducer } from 'react'
+
+const defaultState = { people: data }
+const reducer = () => {}
 
 const ReducerBasics = () => {
-  const [people, setPeople] = React.useState(data)
+  const [state, dispatcher] = useReducer(reducer, defaultState)
+  console.log(state)
 
   const removeItem = (id) => {
-    let newPeople = people.filter((person) => person.id !== id)
-    setPeople(newPeople)
+    // let newPeople = people.filter((person) => person.id !== id)
+    // setPeople(newPeople)
+  }
+
+  const clear = () => {
+    // setPeople([])
   }
 
   const reset = () => {
-    setPeople(data)
+    // setPeople(data)
   }
 
   return (
     <div>
-      {people.map((person) => {
+      {state.people.map((person) => {
         const { id, name } = person
         return (
           <div key={id} className="item">
@@ -24,12 +33,8 @@ const ReducerBasics = () => {
           </div>
         )
       })}
-      {people.length != 0 ? (
-        <button
-          className="btn"
-          style={{ marginTop: '2rem' }}
-          onClick={() => setPeople([])}
-        >
+      {state.people.length != 0 ? (
+        <button className="btn" style={{ marginTop: '2rem' }} onClick={clear}>
           clear items
         </button>
       ) : (
