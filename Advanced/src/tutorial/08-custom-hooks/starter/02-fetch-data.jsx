@@ -2,7 +2,8 @@ import useFetch from './useFetch'
 const url = 'https://api.github.com/users/QuincyLarson'
 
 const FetchData = () => {
-  const [isLoading, isError, user] = useFetch(url)
+  // use data as user here
+  const { isLoading, isError, data: user } = useFetch(url)
   // order matters
   // don't place user JSX before loading or error
 
