@@ -2,11 +2,16 @@ import React from 'react'
 import { data } from '../../../data'
 import { useReducer } from 'react'
 
-const defaultState = { people: data }
-const reducer = () => {}
+const defaultState = { people: data, isLoading: false }
+const reducer = (state, action) => {
+  console.log(state, action)
+  if (action.type === 'CLEAR_LIST') {
+    return { ...state, people: [] }
+  }
+}
 
 const ReducerBasics = () => {
-  const [state, dispatcher] = useReducer(reducer, defaultState)
+  const [state, dispatch] = useReducer(reducer, defaultState)
   console.log(state)
 
   const removeItem = (id) => {
@@ -16,6 +21,7 @@ const ReducerBasics = () => {
 
   const clear = () => {
     // setPeople([])
+    dispatch({ type: 'CLEAR_LIST' })
   }
 
   const reset = () => {
