@@ -9,10 +9,10 @@ const Navbar = () => {
   }
 
   return (
-    <div>
+    <nav className="navbar">
       <h1>Navbar</h1>
       <NavLinks user={user} logout={logout} />
-    </div>
+    </nav>
   )
 }
 
